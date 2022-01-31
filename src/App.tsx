@@ -1,7 +1,8 @@
-import React from 'react';
+/** routes */
+import { AppRouter } from './routes';
 
 export const App = () => {
-	return <h1>Welcome to CoolCrypto</h1>;
+	return <AppRouter />;
 };
 
 export default App;
