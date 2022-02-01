@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useApi = (apiFunction: any) => {
+export const useApi = (apiFunction: Function) => {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');

@@ -1,5 +1,5 @@
 import { apiClient } from '../index';
 
-const getAllCurrencies = () => apiClient.get('/sector/w/lite-list');
+const getCurrencies = () => apiClient.get('/sector/w/lite-list');
 
-export { getAllCurrencies };
+export default { getCurrencies };
