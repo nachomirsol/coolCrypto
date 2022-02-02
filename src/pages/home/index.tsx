@@ -6,14 +6,21 @@ import cryptoCurrenciesApi from 'api/cryptoCurrencies';
 import './styles/home.scss';
 
 export const Home = () => {
-	const getCurrenciesApi = useApi(cryptoCurrenciesApi.getCurrencies);
+	const { data, request } = useApi(cryptoCurrenciesApi.getCurrencies);
 	useEffect(() => {
-		getCurrenciesApi.request();
+		request();
 	}, []);
 	return (
 		<div className='home'>
-			<div className='searchbar'>
-				Hello{cryptoCurrenciesApi?.data && 'search'}
+			{console.log(data?.data)}
+			<div className='home__searchbar'>Hello{data && 'search'}</div>
+			<div className='home__grid'>
+				{
+					data?.data.map((item) => {
+						return (<div className='home__grid-item'>{item.id}</div>)
+					})
+				}
+				
 			</div>
 		</div>
 	);
