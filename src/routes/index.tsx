@@ -1,5 +1,7 @@
 /** Libraries */
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+/** Components */
+import { Header } from 'components/header';
 /** constants */
 import { ROUTES } from 'constants/routes';
 /** Types */
@@ -12,7 +14,16 @@ export const AppRouter = () => {
 				{ROUTES.map((route: RouteType) => {
 					const Component = route.component;
 					return (
-						<Route key={route.id} path={route.path} element={<Component />} />
+						<Route
+							key={route.id}
+							path={route.path}
+							element={
+								<>
+									<Header />
+									<Component />
+								</>
+							}
+						/>
 					);
 				})}
 			</Routes>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 /** Services */
 import { useApi } from 'api/hooks/useApi';
 import cryptoCurrenciesApi from 'api/cryptoCurrencies';
@@ -13,14 +13,13 @@ export const Home = () => {
 	return (
 		<div className='home'>
 			{console.log(data?.data)}
-			<div className='home__searchbar'>Hello{data && 'search'}</div>
+			<div className='home__searchbar'>
+				<input type='search' name='search' />
+			</div>
 			<div className='home__grid'>
-				{
-					data?.data.map((item) => {
-						return (<div className='home__grid-item'>{item.id}</div>)
-					})
-				}
-				
+				{data?.data.map((item) => {
+					return <div className='home__grid-item'>{item.id}</div>;
+				})}
 			</div>
 		</div>
 	);
